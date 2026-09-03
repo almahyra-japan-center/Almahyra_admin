@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Arus Kas AlMahyra</title>
+<style>body{font-family:sans-serif;padding:20px} table{width:100%;border-collapse:collapse} th,td{border:1px solid #ddd;padding:8px} th{background:#0056b3;color:white} input{padding:8px;margin:5px}</style>
+</head>
+<body>
+<h2>Input Arus Kas</h2>
+<form method="POST">
+<input type="date" name="tanggal" required>
+<input name="ket" placeholder="Keterangan" required>
+<input type="number" name="masuk" placeholder="Masuk" value="0">
+<input type="number" name="keluar" placeholder="Keluar" value="0">
+<button>Simpan</button>
+</form>
 
+<h2>Data Transaksi</h2>
+<table><tr><th>Tanggal</th><th>Keterangan</th><th>Masuk</th><th>Keluar</th></tr>
+{% for d in data %}
+<tr><td>{{d[1]}}</td><td>{{d[2]}}</td><td>{{d[3]}}</td><td>{{d[4]}}</td></tr>
+{% endfor %}
+</table>
+</body>
+</html>
